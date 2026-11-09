@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypdf-local-secure"
+version = "6.19.0+local.sec1"
+description = "Locally hardened build of pypdf"
+readme = "SECURITY_CHANGES.md"
+requires-python = ">=3.9"
+license = {text = "BSD-3-Clause"}
+dependencies = ["cryptography>=46.0.3"]
+
+[project.optional-dependencies]
+image = ["Pillow>=12.2.0"]
+test = ["pytest>=9.0.3", "Pillow>=12.2.0"]
+
+[tool.setuptools.packages.find]
+include = ["pypdf*"]
